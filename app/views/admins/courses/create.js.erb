@@ -1,0 +1,6 @@
+<% if @course.errors.count > 0 %>
+  $(".error-container").html("<%= escape_javascript(render 'error') %>")
+<% else %>
+  $("#new-course").modal('hide')
+  $("#course-index").append("<%= escape_javascript(render('course', course: @course )) %>")
+<% end %>

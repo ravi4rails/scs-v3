@@ -1,0 +1,6 @@
+<% if @department.errors.count > 0 %>
+  $(".error-container").html("<%= escape_javascript(render 'error') %>")
+<% else %>
+  $("#edit-department").modal('hide')
+  $('#department_<%= @department.id %>').replaceWith("<%= escape_javascript(render('department', department: @department )) %>")
+<% end %>

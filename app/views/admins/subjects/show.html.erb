@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subject.name %>
+</p>
+
+<%= link_to 'Edit', edit_admins_subject_path(@subject), :remote => true %> |
+<%= link_to 'Back', admins_subjects_path %>
+<div class="modal fade" id="edit-subject" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+</div>

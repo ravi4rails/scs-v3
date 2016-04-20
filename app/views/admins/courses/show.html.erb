@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @course.department.try(:name) %>
+</p>
+
+<%= link_to 'Edit', edit_admins_course_path(@course), :remote => true %> |
+<%= link_to 'Back', admins_courses_path %>
+<div class="modal fade" id="edit-course" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+</div>

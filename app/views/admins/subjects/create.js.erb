@@ -1,0 +1,6 @@
+<% if @subject.errors.count > 0 %>
+  $(".error-container").html("<%= escape_javascript(render 'error') %>")
+<% else %>
+  $("#new-subject").modal('hide')
+  $("#subject-index").append("<%= escape_javascript(render('subject', subject: @subject )) %>")
+<% end %>

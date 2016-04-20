@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<h3>Listing Students</h3>
+<div id="table-responsive">
+  <table class="table table-hover" id="example">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Course</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.full_name %></td>
+          <td><%= student.date_of_birth %></td>
+          <td><%= student.course_id %></td>
+          <td><%= student.email %></td>
+          <td><%= student.address %></td>
+          <td><%= link_to 'Show', admins_student_path(student), class: "btn btn-info" %></td>
+          <td><%= link_to 'Edit', edit_admins_student_path(student), class: "btn btn-warning" %></td>
+          <td><%= link_to 'Destroy', admins_student_path(student), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div>
+<%= link_to 'New Student', new_admins_student_path, class: "btn btn-primary" %>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#example').DataTable();
+});
+</script>

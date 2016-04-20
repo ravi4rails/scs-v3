@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Blood group:</strong>
+  <%= @student.blood_group %>
+</p>
+
+<p>
+  <strong>Relegion:</strong>
+  <%= @student.relegion %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @student.category %>
+</p>
+
+<%= link_to 'Edit', edit_admins_student_path(@student) %> |
+<%= link_to 'Back', admins_students_path %>

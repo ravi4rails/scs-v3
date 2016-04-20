@@ -1,0 +1,129 @@
+<%= form_for [:admins, @student] do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <div class="jumbotron col-md-11">
+        <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+        <ul>
+        <% @student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :first_name %>
+      <span class="fa fa-user errspan"></span>
+      <%= f.text_field :first_name, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :middle_name %>
+      <span class="fa fa-user errspan"></span>
+      <%= f.text_field :middle_name, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :last_name %>
+      <span class="fa fa-user errspan"></span>
+      <%= f.text_field :last_name, class: "form-control feed-back" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :date_of_birth %>
+      <span class="fa fa-calendar errspan"></span>
+      <%= f.text_field :date_of_birth, class: "form-control datepicker feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :age %>
+      <%= f.text_field :age, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :contact %>
+      <%= f.text_field :contact, class: "form-control feed-back" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :state %>
+      <%= f.text_field :state, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :country %>
+      <%= f.text_field :country, class: "form-control feed-back" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :enrollment_date %>
+      <span class="fa fa-calendar errspan"></span>
+      <%= f.text_field :enrollment_date, class: "form-control datepicker feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :admission_date %>
+      <span class="fa fa-calendar errspan"></span>
+      <%= f.text_field :admission_date, class: "form-control datepicker feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :admission_number %>
+      <%= f.text_field :admission_number, class: "form-control feed-back" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :enrollment_number %>
+      <%= f.text_field :enrollment_number, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :blood_group %>
+      <%= f.text_field :blood_group, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :relegion %>
+      <%= f.text_field :relegion, class: "form-control feed-back" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :email %>
+      <span class="fa fa-envelope errspan"></span>
+      <%= f.email_field :email, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :course_id %>
+      <%= f.text_field :course_id, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+      <%= f.label :category %>
+      <%= f.text_field :category, class: "form-control feed-back" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+      <%= f.label :address %>
+      <%= f.text_area :address, class: "form-control feed-back" %>
+    </div>
+    <div class="col-md-3 col-xs-12">
+    </div>
+  </div>
+  &nbsp
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+<script type="text/javascript">
+  $(".datepicker").datepicker({
+    format: "yyyy-mm-dd"
+  });
+</script>

@@ -1,0 +1,12 @@
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require bootstrap
+//= require admin/nprogress
+//= require admin/gauge.min
+//= require admin/gauge_demo
+//= require admin/bootstrap-progressbar.min
+//= require admin/icheck.min
+//= require admin/jquery.dataTables.min
+//= require jquery-ui
+//= require admin/custom

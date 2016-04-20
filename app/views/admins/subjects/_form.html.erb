@@ -1,0 +1,15 @@
+<%= form_for [:admins, @subject], :remote => true do |f| %>
+  <div class="modal-body">
+    <div class="error-container"></div>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <%= f.submit "Save Subject", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+

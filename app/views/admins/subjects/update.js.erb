@@ -1,0 +1,6 @@
+<% if @subject.errors.count > 0 %>
+  $(".error-container").html("<%= escape_javascript(render 'error') %>")
+<% else %>
+  $("#edit-subject").modal('hide')
+  $('#subject_<%= @subject.id %>').replaceWith("<%= escape_javascript(render('subject', subject: @subject )) %>")
+<% end %>
