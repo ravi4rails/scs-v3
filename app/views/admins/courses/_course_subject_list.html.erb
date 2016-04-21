@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <% if course.course_subjects.present? %>
+    <h3>Subject List</h3>
+    <table>
+      <thead>
+        <th>Subject</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <% course.course_subjects.each do |course_subject| %>
+          <tr id="course_subject_<%= course_subject.id%>">
+            <td>
+              <h5>
+                <%= course_subject.subject.try(:name) %>
+              </h5>
+            </td>
+            <td>
+              <%= link_to "Remove This Subject", admins_course_subject_path(course_subject), class: "btn btn-danger", :remote => true, :method => :delete %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+  <h3 class="text-center">Include Subject in this course.</h3>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $(".remove-subject").on('click', function(){
+    var courseSubjectId = $(this).data("list-id");
+    $.ajax({
+      url: "/admins/courses/remove_course_subject",
+      type: "GET",
+      data: {course_subject_id: courseSubjectId}
+    });
+  });
+</script>

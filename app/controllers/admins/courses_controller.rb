@@ -54,6 +54,21 @@ class Admins::CoursesController < ApplicationController
     end
   end
 
+  def include_subjects
+    @course = Course.find(params[:include_subjects][:course_id])
+    params[:include_subjects][:subject].delete("")
+    subject_array = params[:include_subjects][:subject]
+    subject_array.each do |subject|
+      CourseSubject.create(:course_id => @course.id, :subject_id => subject.to_i)
+    end
+  end
+
+  def remove_course_subject
+    @course_subject = CourseSubject.find(params[:course_subject_id])
+    @course_subject.destroy
+    redirect_to admins_courses_path
+  end
+
   private
 
     def set_course

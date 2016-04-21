@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :students
     resources :departments
-    resources :courses
+    resources :courses do
+      collection do
+        post :include_subjects
+        get :remove_course_subject
+      end
+    end
+    resources :course_subjects, :only => [:destroy]
     resources :subjects
   end
 
