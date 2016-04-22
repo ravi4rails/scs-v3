@@ -1,0 +1,13 @@
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h4>
+    <ul>
+    <% @event.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><%= message %></strong>
+      </div>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

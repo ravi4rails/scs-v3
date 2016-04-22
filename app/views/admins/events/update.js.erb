@@ -1,0 +1,6 @@
+<% if @event.errors.count > 0 %>
+  $(".error-container").html("<%= escape_javascript(render 'error') %>")
+<% else %>
+  $("#edit-event").modal('hide')
+  $('#event_<%= @event.id %>').replaceWith("<%= escape_javascript(render('event', event: @event )) %>")
+<% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins, controllers: { sessions: "admins/sessions", registrations: "admins/registrations", confirmations: "admins/confirmations", passwords: "admins/passwords" }
   get 'home/index'
   get '/dashboard' => "home#dashboard"
@@ -11,11 +12,12 @@ Rails.application.routes.draw do
     resources :courses do
       collection do
         post :include_subjects
-        get :remove_course_subject
       end
     end
     resources :course_subjects, :only => [:destroy]
     resources :subjects
+    resources :employees
+    resources :events
   end
 
 end
