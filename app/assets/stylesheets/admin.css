@@ -8,5 +8,6 @@
   *= require admin/green
   *= require admin/floatexamples
   *= require admin/jquery.dataTables.min
+  *= require admin/fullcalendar
   *= require admin/custom
 */

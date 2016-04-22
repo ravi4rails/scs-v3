@@ -1,0 +1,48 @@
+<div class="calender-heading">
+  <h2>View Events</h2>
+</div>
+<div class="container">
+  <div id="calendar" class="calender"></div>
+</div>
+<div id="fullCalModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+        <h4 id="modalTitle" class="modal-title"></h4>
+      </div>
+      <div class="col-sm-12">
+        <div id="modalBody" class="modal-body">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      defaultDate: new Date(),
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: "/admins/events/calendar_events",
+      eventClick:  function(event, jsEvent, view) {
+        var eventId = event.id;
+        $.ajax({
+          url: '/admins/events/get_event',
+          type: "GET",
+          data: {event_id: event.id}
+        });
+      }
+    });
+  });
+</script>

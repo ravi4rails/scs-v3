@@ -7,4 +7,6 @@
 //= require admin/icheck.min
 //= require admin/jquery.dataTables.min
 //= require jquery-ui
+//= require admin/moment.min
+//= require admin/fullcalendar
 //= require admin/custom

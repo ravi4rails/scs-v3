@@ -17,7 +17,13 @@ Rails.application.routes.draw do
     resources :course_subjects, :only => [:destroy]
     resources :subjects
     resources :employees
-    resources :events
+    resources :events do
+      collection do
+        get :calendar_events
+        get :calendar
+        get :get_event
+      end
+    end
   end
 
 end

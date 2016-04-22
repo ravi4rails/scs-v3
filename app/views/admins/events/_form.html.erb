@@ -11,13 +11,11 @@
     </div>
     <div class="field">
       <%= f.label :start_date %>
-      <span class="fa fa-calendar errspan"></span>
-      <%= f.text_field :start_date, class: "form-control datepicker feed-back" %>
+      <%= f.datetime_select :start_date, ampm: true, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :end_date %>
-      <span class="fa fa-calendar errspan"></span>
-      <%= f.text_field :end_date, class: "form-control datepicker feed-back" %>
+      <%= f.datetime_select :end_date, ampm: true,class: "form-control" %>
     </div>
   </div>
   <div class="modal-footer">
@@ -25,8 +23,3 @@
     <%= f.submit "Save Event", class: "btn btn-primary" %>
   </div>
 <% end %>
-<script type="text/javascript">
-  $(".datepicker").datepicker({
-    format: "yyyy-mm-dd"
-  });
-</script>

@@ -53,6 +53,28 @@ class Admins::EventsController < ApplicationController
     end
   end
 
+  def calendar_events
+    @events = Event.all
+    events = []
+    @events.each do |event|
+      event_hash = {}
+      event_hash["id"] = event.id
+      event_hash["title"] = event.title
+      event_hash["start"] = event.start_date
+      event_hash["end"] = event.end_date
+      event_hash["description"] = event.description
+      events << event_hash
+    end
+    render :json => events
+  end
+
+  def calendar
+  end
+
+  def get_event
+    @event = Event.find(params[:event_id])
+  end
+
   private
 
     def set_event
