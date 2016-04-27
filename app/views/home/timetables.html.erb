@@ -1,0 +1,56 @@
+<div class="timetable-dashboard">
+  <div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h4 class="timetable-links"><%= link_to "Work Allotment", "#"%></h4>
+    <h5>Assign Subjects To Teachers</h5>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h4 class="timetable-links"><%= link_to "Create Timetable", "#"%></h4>
+    <h5>Create timetable for all the classes</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h4 class="timetable-links"><%= link_to "Set Class Timings", "#"%></h4>
+    <h5>Select a class and edit the timetable for that class</h5>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h4 class="timetable-links"><%= link_to "View Timetable", "#"%></h4>
+    <h5>Select a class and view the timetable for that class</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h4 class="timetable-links"><%= link_to "Teachers Timetables", "#"%></h4>
+    <h5>View timetables of teachers</h5>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <h4 class="timetable-links"><%= link_to "Institutional Timetable", "#"%></h4>
+    <h5>View The entire timetable for a day.</h5>
+  </div>
+</div>
+</div>
+
+<style type="text/css">
+  .timetable-links a{
+    font-weight: 900;
+    color: #680000;
+  }
+  .timetable-dashboard {
+    max-width:90%;
+    min-height: 400px;
+    padding-left: 10%;
+    padding-top: 10%;
+    background-color:#fff;
+    margin-left: 5%;
+  }
+  @media screen and (max-width:767px){
+    .timetable-dashboard {
+      max-width: 100%;
+      padding-left: 20px;
+      margin-top: 8% !important;
+      min-height: 500px;
+      margin-left: 0%;
+    }
+  }
+</style>

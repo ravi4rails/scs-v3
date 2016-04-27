@@ -4,4 +4,9 @@ class HomeController < ApplicationController
   end
   def dashboard
   end
+
+  def timetables
+
+  end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422031052) do
+ActiveRecord::Schema.define(version: 20160423035912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,16 @@ ActiveRecord::Schema.define(version: 20160422031052) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "employee_subjects", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.integer  "subject_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "employee_subjects", ["employee_id"], name: "index_employee_subjects_on_employee_id", using: :btree
+  add_index "employee_subjects", ["subject_id"], name: "index_employee_subjects_on_subject_id", using: :btree
 
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
@@ -119,4 +129,6 @@ ActiveRecord::Schema.define(version: 20160422031052) do
 
   add_foreign_key "course_subjects", "courses"
   add_foreign_key "courses", "departments"
+  add_foreign_key "employee_subjects", "employees"
+  add_foreign_key "employee_subjects", "subjects"
 end
